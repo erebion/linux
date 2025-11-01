@@ -497,6 +497,35 @@
 	cd-gpios = <&tlmm 94 GPIO_ACTIVE_HIGH>;
 };
 
+&sound {
+	compatible = "xperia,lena-sndcard"; // fix me: Is this how it should look like?
+	model = "Xperia 10 III";  // fix me: Is this how it should look like?
+
+	mm1-dai-link {
+		link-name = "MultiMedia1";
+
+		cpu {
+			sound-dai = <&q6asmdai MSM_FRONTEND_DAI_MULTIMEDIA1>;
+		};
+	};
+
+	usb-dai-link {
+		link-name = "USB Playback";
+
+		codec {
+			sound-dai = <&q6usbdai USB_RX>;
+		};
+
+		cpu {
+			sound-dai = <&q6afedai USB_RX>;
+		};
+
+		platform {
+			sound-dai = <&q6routing>;
+		};
+	};
+};
+
 &tlmm {
 	gpio-reserved-ranges = <13 4>, <45 2>, <56 2>;
 
