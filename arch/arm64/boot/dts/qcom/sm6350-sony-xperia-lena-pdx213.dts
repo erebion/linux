@@ -26,6 +26,7 @@
 	qcom,board-id = <0x1000B 0>;
 
 	aliases {
+		serial0 = &uart9;
 		serial1 = &uart1;
 	};
 
