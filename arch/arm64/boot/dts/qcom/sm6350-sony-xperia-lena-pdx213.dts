@@ -490,6 +490,11 @@
 	status = "okay";
 };
 
+&mpss {
+	firmware-name = "qcom/sm6350/sony/pdx213/modem.mbn";
+	status = "okay";
+};
+
 &pm6150l_flash {
 	status = "okay";
 
